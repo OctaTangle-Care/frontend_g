@@ -4,7 +4,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products/")
+    fetch(process.env.REACT_APP_API_URL + 'products/')
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
